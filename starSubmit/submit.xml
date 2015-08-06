@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job fileListSyntax="xrootd" minFilesPerProcess="200" maxFilesPerProcess="400" simulateSubmission="false" name="MuDstReader">
+ 
+  <stdout URL="file:&basePath;/jobs/log/$JOBID.out"/>
+  <stderr URL="file:&basePath;/jobs/log/$JOBID.err"/>
+
+  <input URL="catalog:star.bnl.gov?trgsetupname=&trgSetup;,storage=local,filetype=daq_reco_MuDst,site=BNL,sanity=1,runtype=physics,filename~st_physics" nFiles="10" />
+
+  <Generator>
+    <Location>./report/</Location>
+    <ScriptLocation>./csh/</ScriptLocation>
+    <ListLocation>./list/</ListLocation>
+  </Generator>
+  
+  <command>
+    &basePath;/starSubmit/parseFileList.csh ${FILELIST} &basePath; &prodId; &rootMacro; &energy; &starVersion; ${JOBID}
+  </command>
+
+  <output fromScratch="*.*"       toURL="&basePath;/production/&prodId;/" />
+  <output fromScratch="*.txt"     toURL="&basePath;/production/&prodId;/" />
+  
+  <SandBox installer="ZIP">
+    <Package name="LocalLibraries">
+      <File>file:./StRoot/</File>
+      <File>file:./.sl64_gcc447/</File>
+    </Package>
+  </SandBox>
+</job>
+
