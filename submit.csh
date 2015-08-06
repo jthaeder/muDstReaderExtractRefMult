@@ -29,6 +29,18 @@ echo "Trigger Setup: $trgSetup"
 # -- DON'T CHANGE BELOW THAT LINE
 # ###############################################
 
+# -- Compile
+set oldSTAR_VERSION=$STAR_VERSION
+starver $starVersion
+
+rm -rf .sl64_gcc447
+
+cons
+
+starver $oldSTAR_VERSION
+
+# -----------------------------------------------
+
 # -- job submission directory
 mkdir -p ${baseFolder}/jobs
 
@@ -40,15 +52,6 @@ pushd ${baseFolder}/jobs > /dev/null
 # -- prepare folder
 mkdir -p report log list csh
 
-# -----------------------------------------------
-
-# -- Compile
-set oldSTAR_VERSION=$STAR_VERSION
-starver $starVersion
-rm-rf .sl64_gcc447
-cons
-starver $oldSTAR_VERSION
-exit
 # -----------------------------------------------
 
 # -- check for prerequisits and create links
