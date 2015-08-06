@@ -4,7 +4,7 @@
   <stdout URL="file:&basePath;/jobs/log/$JOBID.out"/>
   <stderr URL="file:&basePath;/jobs/log/$JOBID.err"/>
 
-  <input URL="catalog:star.bnl.gov?trgsetupname=&trgSetup;,storage=local,filetype=daq_reco_MuDst,site=BNL,sanity=1,runtype=physics,filename~st_physics" nFiles="10" />
+  <input URL="catalog:star.bnl.gov?trgsetupname=&trgSetup;,storage=local,filetype=daq_reco_MuDst,site=BNL,sanity=1,runtype=physics,filename~st_physics" nFiles="all" />
 
   <Generator>
     <Location>./report/</Location>
