@@ -41,5 +41,5 @@ foreach line ( `cat $fileList` )
     root4star -q -b -l StRoot/macros/${rootMacro}'("'${line}'", 1, "'${outName}'")'
 
     starver $oldSTAR_VERSION
-    mv ${outName} refMult.txt $outDir
+    mv ${outName}.refMult.txt $outDir
 end
