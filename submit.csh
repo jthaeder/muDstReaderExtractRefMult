@@ -8,14 +8,36 @@ set rootMacro=runMuDstAna.C
 set baseFolder=`pwd`
 set productionId=`date +%F_%H-%M`
 
-set energy=39
 
-if ( $energy == 27 ) then 
-    set trgSetup=AuAu27_production_2011
+#set energy=7
+set energy=11
+#set energy=19
+#set energy=27
+#set energy=39
+#set energy=62
+
+
+if ( $energy == 7 ) then 
+    set trgSetup=AuAu7_production
     set starVersion=SL10h
+else if ( $energy == 11 ) then 
+    set trgSetup=AuAu11_production
+    set starVersion=SL10h
+else if ( $energy == 19 ) then 
+    set trgSetup=AuAu19_production
+    set starVersion=SL11d
+else if ( $energy == 27 ) then 
+    set trgSetup=AuAu27_production_2011
+    set starVersion=SL11d
 else if ( $energy == 39 ) then 
     set trgSetup=AuAu39_production
     set starVersion=SL10h
+else if ( $energy == 62 ) then 
+    set trgSetup=AuAu62_production
+    set starVersion=SL10k
+else if ( $energy == 200 ) then 
+    set trgSetup=AuAu200_production
+    set starVersion=SL10k
 else
     exit
 endif
