@@ -22,7 +22,7 @@
   <SandBox installer="ZIP">
     <Package name="LocalLibraries">
       <File>file:./StRoot/</File>
-      <File>file:./.sl64_gcc447/</File>
+      <File>file:./.sl64_gcc482/</File>
     </Package>
   </SandBox>
 </job>

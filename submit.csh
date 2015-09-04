@@ -10,11 +10,12 @@ set productionId=`date +%F_%H-%M`
 
 
 #set energy=7
-set energy=11
+#set energy=11
 #set energy=19
 #set energy=27
 #set energy=39
 #set energy=62
+set energy=200
 
 
 if ( $energy == 7 ) then 
@@ -55,7 +56,7 @@ echo "Trigger Setup: $trgSetup"
 set oldSTAR_VERSION=$STAR_VERSION
 starver $starVersion
 
-rm -rf .sl64_gcc447
+rm -rf .sl64_gcc482
 
 cons
 
@@ -77,7 +78,7 @@ mkdir -p report log list csh
 # -----------------------------------------------
 
 # -- check for prerequisits and create links
-set folders=".sl64_gcc447 StRoot starSubmit"
+set folders=".sl64_gcc482 StRoot starSubmit"
 
 echo -n "Checking prerequisits folders ...  "
 foreach folder ( $folders ) 
